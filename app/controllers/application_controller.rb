@@ -3,15 +3,15 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def bmi_service
-      BmiService.new(params)
-    end
-    
-    def broca_service 
-      BrocaService.new(params)
-    end
+  def bmi_service
+    BmiService.new(params)
+  end
+  
+  def broca_service 
+    BrocaService.new(params)
+  end
 
-    def kalori_service
-      KaloriService.new(params)
-    end
+  def calorie_service
+    CalorieService.new(params)
+  end
 end

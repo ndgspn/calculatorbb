@@ -3,12 +3,13 @@
     Kalkulator Berat Badan Ideal
     %br
     %strong "Metode Broca"
-%p
+    %p
 
 .form-group
   = form_for :calc, url: { action: :broca }, method: :get do |f|
-    %label{for: 'tinggi'} Tinggi Badan (cm):
-    = number_field_tag :tinggi, params[:tinggi], step: 0.1, required: true, class: 'form-control'
+    %label{for: 'body_height'} Tinggi Badan (cm):
+    = number_field_tag :body_height, params[:body_height], step: 0.1, required: true, class: 'form-control'
+    %br
 
     %label{for: 'jk'} Jenis kelamin :
     = select_tag :gender, options_for_select([['Pria', :pria], ['Wanita', :wanita]], params[:gender]), class: 'form-control'

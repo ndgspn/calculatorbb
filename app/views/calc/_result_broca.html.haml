@@ -1,6 +1,6 @@
 .jumbotron{style: "background-color: '#CFD8DC'"}
-  - unless @result.nil?
-    - if params[:tinggi].to_i < 145
+  - unless @broca.nil?
+    - if params[:body_height].to_i < 145
       %h3
         %center 
           Maaf, untuk menggunakan metode 
@@ -13,13 +13,13 @@
       %h3
         %center 
           Tinggi badan kamu adalah 
-          %strong #{params[:tinggi]} cm
+          %strong #{params[:body_height]} cm
       %h3
         %center Perkiraan Berat Ideal Kamu adalah: 
       %h1
         %center
           %font{color: 'green'}
-            = @result
+            = @broca
             Kg
       %center *Hitung juga dengan metode BMI pada menu Pilih Kalkulator untuk mengetahui minimal dan maximal berat badan ideal kamu.
 

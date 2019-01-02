@@ -6,17 +6,17 @@
         %strong #{@bmi}
       Status berat badan kamu adalah
       %strong
-        =raw @status_bb.html_safe
+        =raw @body_weight_status.html_safe
       %br 
       Perkiraan berat ideal 
       %strong minimal
       adalah 
-      %strong #{@berat_min} kg
+      %strong #{@minimum_body_weight} kg
       %br
       Perkiraan berat ideal 
       %strong maximal
       adalah 
-      %strong #{@berat_max} kg
+      %strong #{@maximum_body_weight} kg
       %br
     %p
       %table.table

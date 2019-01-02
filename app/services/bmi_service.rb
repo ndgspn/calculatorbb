@@ -1,41 +1,41 @@
 class BmiService
-  attr_reader :berat_badan, :tinggi
+  attr_reader :body_weight, :body_height
 
   def initialize(params)
-    @berat_badan        =  params[:berat_badan].to_f
-    @tinggi             =  params[:tinggi].to_f
+    @body_weight        =  params[:body_weight].to_f
+    @body_height        =  params[:body_height].to_f
   end
 
-  def call
-    bmi         = (berat_badan / ((tinggi / 100) ** 2)).round(1)
+  def bmi
+    (body_weight / ((body_height / 100) ** 2)).round(1)
   end
 
-  def status_bb(bmi)
+  def body_weight_status
     case
     when bmi >= 30.0
-      render_obesitas
+      render_obesity
     when bmi >= 25.0
-      render_kelebihan_berat
+      render_overweight
     when bmi >= 18.5
       render_ideal
     else
-      render_kurus
+      render_skiny
     end
   end
 
-  def min_weight
-    berat_min   = (18.5 * ((tinggi / 100) ** 2)).round(1)
+  def minimum_body_weight
+    (18.5 * ((body_height / 100) ** 2)).round(1)
   end
 
-  def max_weight
-    berat_max   = (24.9 * ((tinggi / 100) ** 2)).round(1)
+  def maximum_body_weight
+    (24.9 * ((body_height / 100) ** 2)).round(1)
   end
 
-  def render_obesitas
+  def render_obesity
     '<font color="#ff3300">Kegemukan (Obesitas)</font>'
   end
 
-  def render_kelebihan_berat
+  def render_overweight
     '<font color="#ff704d">Kelebihan berat badan</font>'
   end
 
@@ -43,7 +43,7 @@ class BmiService
     '<font color="#269900">Normal (Ideal)</font>'
   end
 
-  def render_kurus
+  def render_skiny
     '<font color="#000000">Kurus</font>'
   end
 end

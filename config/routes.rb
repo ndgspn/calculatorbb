@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :calc, only: [:index, :new] do
     get 'bmi', on: :collection
     get 'broca', on: :collection
-    get 'kalori', on: :collection
+    get 'calorie', on: :collection
   end
 end

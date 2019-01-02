@@ -1,21 +1,21 @@
 class BrocaService
-  attr_reader :tinggi, :gender
+  attr_reader :body_height, :gender
 
   def initialize(params)
-    @tinggi     = params[:tinggi].to_f
-    @gender     = params[:gender]
+    @body_height        = params[:body_height].to_f
+    @gender             = params[:gender]
   end
 
-  def call
-    return result_pria if gender == 'pria'
-    result_wanita
+  def broca
+    return man_broca if gender == 'pria'
+    woman_broca
   end
 
-  def result_pria
-    ((tinggi - 100) - ((tinggi - 100) * 0.1)).ceil
+  def man_broca
+    ((body_height - 100) - ((body_height - 100) * 0.1)).ceil
   end
 
-  def result_wanita
-    ((tinggi - 100) - ((tinggi - 100) * 0.15)).ceil
+  def woman_broca
+    ((body_height - 100) - ((body_height - 100) * 0.15)).ceil
   end
 end
