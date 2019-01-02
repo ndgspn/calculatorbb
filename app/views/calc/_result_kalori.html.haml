@@ -1,0 +1,12 @@
+.jumbotron{style: "background-color: '#CFD8DC'"}
+  - unless @akg.nil?
+    %center
+      %h4 Angka Kecukupan Gizi kamu adalah:
+      %h2
+        %font{color: 'green'}
+          = @akg 
+        Kalori per Hari
+    %p
+
+    * Perkiraan kalori Angka Kecukupan Gizi (AKG) berdasarkan jenis kelamin, berat badan, tinggi badan, usia dan tingkat aktivitas kamu.
+

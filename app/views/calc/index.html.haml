@@ -1,0 +1,25 @@
+.container
+  .jumbotron
+    %ul.nav.nav-tabs#myTab
+      .navbar-header
+        .navbar-brand Pilih Kalkulator
+      %li.active
+        %a{data: {toggle: 'tab'}, href: '#bmi'} BMI
+      %li
+        %a{data: {toggle: 'tab'}, href: '#broca'} Broca
+      %li
+        %a{data: {toggle: 'tab'}, href: '#kalori'} Kalori
+
+    .tab-content
+      #bmi.tab-pane.fade.in.active
+        = render 'bmi'
+
+      #broca.tab-pane.fade
+        = render 'broca'
+
+      #kalori.tab-pane.fade
+        = render 'kalori'
+
+  .powered
+    %p
+      = link_to 'by papooa.com', 'https://papooa.com', target: 'blank'
