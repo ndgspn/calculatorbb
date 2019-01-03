@@ -1,6 +1,12 @@
 .jumbotron{style: "background-color: '#CFD8DC'"}
   - unless @akg.nil?
     %center
+      %h4 Nilai BMR kamu adalah:
+      %h2
+        %font{color: 'green'}
+          = @bmr_calorie.ceil
+          %p
+
       %h4 Angka Kecukupan Gizi kamu adalah:
       %h2
         %font{color: 'green'}
@@ -9,4 +15,7 @@
     %p
 
     * Perkiraan kalori Angka Kecukupan Gizi (AKG) berdasarkan jenis kelamin, berat badan, tinggi badan, usia dan tingkat aktivitas kamu.
-
+    %br
+    * Nilai BMR adalah jumlah kalori <strong>MINIMAL</strong> harian, supaya organ tubuh bisa berfungsi dengan baik.
+    %br
+    * Angka Kecukupan Gizi adalah kalori <strong>TOTAL</strong> yang dibutuhakan untuk menjalani aktivitas harian.
