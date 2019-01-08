@@ -18,4 +18,8 @@ class BrocaService
   def woman_broca
     ((body_height - 100) - ((body_height - 100) * 0.15)).ceil
   end
+
+  def less_than_minimum_height
+    body_height.to_i < 145
+  end
 end

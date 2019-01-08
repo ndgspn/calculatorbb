@@ -1,6 +1,6 @@
 .jumbotron{style: "background-color: '#CFD8DC'"}
   - unless @broca.nil?
-    - if params[:body_height].to_i < 145
+    - if @less_than_minimum_height
       %h3
         %center 
           Maaf, untuk menggunakan metode 

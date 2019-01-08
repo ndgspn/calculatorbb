@@ -8,7 +8,8 @@ class CalcController < ApplicationController
   end
 
   def broca 
-    @broca              = broca_service.broca
+    @broca                      = broca_service.broca
+    @less_than_minimum_height   = broca_service.less_than_minimum_height
     render :index
   end
 
