@@ -2,8 +2,8 @@ class BmiService
   attr_reader :body_weight, :body_height
 
   def initialize(params)
-    @body_weight        =  params[:body_weight].to_f
-    @body_height        =  params[:body_height].to_f
+    @body_weight = params[:body_weight].to_f
+    @body_height = params[:body_height].to_f
   end
 
   def bmi

@@ -2,8 +2,8 @@ class BrocaService
   attr_reader :body_height, :gender
 
   def initialize(params)
-    @body_height        = params[:body_height].to_f
-    @gender             = params[:gender]
+    @body_height = params[:body_height].to_f
+    @gender      = params[:gender]
   end
 
   def broca

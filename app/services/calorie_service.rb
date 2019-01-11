@@ -2,11 +2,11 @@ class CalorieService
   attr_reader :gender, :body_weight, :body_height, :age, :activity_level
 
   def initialize(params)
-    @gender             = params[:gender]
-    @body_weight        = params[:body_weight].to_f
-    @body_height        = params[:body_height].to_f
-    @age                = params[:age].to_i
-    @activity_level     = params[:activity_level]
+    @gender         = params[:gender]
+    @body_weight    = params[:body_weight].to_f
+    @body_height    = params[:body_height].to_f
+    @age            = params[:age].to_i
+    @activity_level = params[:activity_level]
   end
 
   def bmr_calorie
