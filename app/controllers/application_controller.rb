@@ -14,4 +14,5 @@ class ApplicationController < ActionController::Base
   def calorie_service
     CalorieService.new(params)
   end
+
 end

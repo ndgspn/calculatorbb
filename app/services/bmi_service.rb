@@ -10,6 +10,14 @@ class BmiService
     (body_weight / ((body_height / 100) ** 2)).round(1)
   end
 
+  def minimum_body_weight
+    (18.5 * ((body_height / 100) ** 2)).round(1)
+  end
+
+  def maximum_body_weight
+    (24.9 * ((body_height / 100) ** 2)).round(1)
+  end
+
   def body_weight_status
     case
     when bmi >= 30.0
@@ -21,14 +29,6 @@ class BmiService
     else
       render_skiny
     end
-  end
-
-  def minimum_body_weight
-    (18.5 * ((body_height / 100) ** 2)).round(1)
-  end
-
-  def maximum_body_weight
-    (24.9 * ((body_height / 100) ** 2)).round(1)
   end
 
   def render_obesity
