@@ -1,0 +1,20 @@
+%h2
+  %center
+    Kalkulator Berat Badan Ideal
+    %br
+    %strong "Metode BMI"
+    %p
+
+.form-group
+  = form_for :calc, url: { action: :bmi }, method: :get do |f|
+    %label{for: 'body_height'} Tinggi Badan (cm):
+    = number_field_tag :body_height, params[:body_height], step: 0.1, required: true, class: 'form-control'
+    %br
+    
+    %label{for: 'body_weight'} Berat Badan (kg)
+    = number_field_tag :body_weight, params[:body_weight], step: 0.1, required: true, class: 'form-control'
+    %br
+
+    = f.submit 'Hitung', class: 'form-control btn-primary'
+  %p
+  = render 'result_bmi'

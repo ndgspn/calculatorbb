@@ -1,0 +1,40 @@
+.jumbotron{style: "background-color: '#CFD8DC'"}
+  - unless @bmi.nil?
+    %center
+      %h3 
+        Nilai BMI kamu adalah 
+        %strong #{@bmi}
+      Status berat badan kamu adalah
+      %strong
+        =raw @body_weight_status.html_safe
+      %br 
+      Perkiraan berat ideal 
+      %strong minimal
+      adalah 
+      %strong #{@minimum_body_weight} kg
+      %br
+      Perkiraan berat ideal 
+      %strong maximal
+      adalah 
+      %strong #{@maximum_body_weight} kg
+      %br
+    %p
+      %table.table
+        %thead
+          %tr
+            %th BMI
+            %th Status Berat Badan
+        %tbody
+          %tr.warning
+            %td Kurang dari 18.5
+            %td Kurus / Kekurangan berat badan
+          %tr.success
+            %td 18.5 - 24.9
+            %td Normal (ideal)
+          %tr.warning
+            %td 25.0 - 29.9
+            %td Kelebihan berat badan
+          %tr.danger
+            %td 30.0 atau lebih
+            %td Kegemukan (obesitas)
+

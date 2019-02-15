@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %title Kalkulator Berat Badan Ideal Online
+    %meta{charset: 'UTF-8'}
+    %meta{property: 'og:title', content: 'Hitung berat badan ideal,kalkulator berat badan online,hitung kalori online,Kalkulator Berat Badan Ideal, Angka Kecukupan Gizi'}    
+    %meta{property: 'og:description', content: 'Kalkulator Berat Badan Ideal, Angka Kecukupan Gizi'}    
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'} 
+
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    %script
+      $(document).ready(function(){
+
+      $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+      localStorage.setItem('activeTab', $(e.target).attr('href'));
+      });
+
+      var activeTab = localStorage.getItem('activeTab');
+
+      if(activeTab){
+      $('#myTab a[href="' + activeTab + '"]').tab('show'); 
+      }
+
+      });
+
+  %body
+    .container{style: 'padding-top:50px;'}
+      = yield

@@ -1,0 +1,25 @@
+.jumbotron{style: "background-color: '#CFD8DC'"}
+  - unless @broca.nil?
+    - if @less_than_minimum_height
+      %h3
+        %center 
+          Maaf, untuk menggunakan metode 
+          %strong Broca
+          minimal tinggi badan kamu harus 
+          %strong 145 cm. 
+          Terimakasih
+      %p 
+    - else
+      %h3
+        %center 
+          Tinggi badan kamu adalah 
+          %strong #{params[:body_height]} cm
+      %h3
+        %center Perkiraan Berat Ideal Kamu adalah: 
+      %h1
+        %center
+          %font{color: 'green'}
+            = @broca
+            Kg
+      %center *Hitung juga dengan metode BMI pada menu Pilih Kalkulator untuk mengetahui minimal dan maximal berat badan ideal kamu.
+
